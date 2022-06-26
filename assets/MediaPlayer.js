@@ -33,5 +33,5 @@
     this.media.muted = false;
   }
 
-
+ 
   export default MediaPlayer;
