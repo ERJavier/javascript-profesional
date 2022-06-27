@@ -155,31 +155,31 @@ const link = Hero("Link");
 link.saludar();
 
 
-//
+// new 
 
 
 
-const heroMethods = {
-saludar: function(){
-    console.log(`Hola soy ${this.name}`);
-    },
-};
+// const heroMethods = {
+// saludar: function(){
+//     console.log(`Hola soy ${this.name}`);
+//     },
+// };
 
 
 function Hero(name) {
-    const hero = Object.create(Hero.prototype);
-    hero.name = name;
-    return hero;
+    //const hero = Object.create(Hero.prototype);
+    this.name = name;
+    //return hero;
 }
 
 Hero.prototype.saludar = function() {
     console.log(`soy superheroe! ${this.name}`);
 } ;
 
-const zelda = Hero("Zelda");
+const zelda = new Hero("Zelda");
 zelda.saludar();
 
-const link = Hero("Link");
+const link = new Hero("Link");
 link.saludar();
 
 
