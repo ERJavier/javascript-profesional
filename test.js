@@ -182,4 +182,17 @@ zelda.saludar();
 const link = new Hero("Link");
 link.saludar();
 
+console.log("name:",zelda.name );
 
+//hasOwnProperty
+
+console.log('zelda.hasOwnProperty("name"):',zelda.hasOwnProperty("name") );
+
+
+
+const protp = Object.getPrototypeOf('zelda');
+console.log(protp);
+
+const calc = (){
+    if 
+}
