@@ -64,6 +64,122 @@ const daniel = {name:'daniel', lastName:'cruz'}
 const danielSaluda = saludar.bind(daniel);
 danielSaluda();
 
-const danielCamina = caminar.bind(daniel, 400, 'sur')
+const danielCamina = caminar.bind(daniel, 400, 'sur');
+
+
+
+//PROTOTYPE
+
+
+const zelda = {
+    name: "Zelda"
+}
+zelda.saludar = function(){
+    console.log(`Hola soy ${this.name}`);
+}
+
+zelda.saludar();
+
+const link = {
+    name: "Link"
+}
+link.saludar = function(){
+    console.log(`Hola soy ${this.name}`);
+}
+link.saludar();
+
+// 
+// Constructor
+
+const Hero = function Hero(name) {
+    const hero = {
+        name: name
+    }
+
+    hero.saludar = function(){
+        console.log(`Hola soy ${this.name}`);
+
+    };
+    return hero
+}
+
+const zelda = Hero("Zelda");
+zelda.saludar();
+
+const link = Hero("Link");
+link.saludar();
+
+
+//
+
+
+const heroMethods = {
+saludar: function(){
+    console.log(`Hola soy ${this.name}`);
+    },
+};
+function Hero(name) {
+    const hero = {
+        name: name
+    };
+    hero.saludar =  heroMethods.saludar;
+    return hero;
+}
+const zelda = Hero("Zelda");
+zelda.saludar();
+
+const link = Hero("Link");
+link.saludar();
+
+
+// 
+
+const nuevoObjeto = Object.create(objeto);
+
+
+
+const heroMethods = {
+saludar: function(){
+    console.log(`Hola soy ${this.name}`);
+    },
+};
+function Hero(name) {
+    const hero = Object.create(heroMethods);
+    hero.name = name;
+    return hero;
+}
+const zelda = Hero("Zelda");
+zelda.saludar();
+
+const link = Hero("Link");
+link.saludar();
+
+
+//
+
+
+
+const heroMethods = {
+saludar: function(){
+    console.log(`Hola soy ${this.name}`);
+    },
+};
+
+
+function Hero(name) {
+    const hero = Object.create(Hero.prototype);
+    hero.name = name;
+    return hero;
+}
+
+Hero.prototype.saludar = function() {
+    console.log(`soy superheroe! ${this.name}`);
+} ;
+
+const zelda = Hero("Zelda");
+zelda.saludar();
+
+const link = Hero("Link");
+link.saludar();
 
 
