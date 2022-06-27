@@ -190,9 +190,24 @@ console.log('zelda.hasOwnProperty("name"):',zelda.hasOwnProperty("name") );
 
 
 
-const protp = Object.getPrototypeOf('zelda');
-console.log(protp);
+const protp = Object.getPrototypeOf(zelda);
+// console.log(protp);
 
-const calc = (){
-    if 
+if (protp === Object.getPrototypeOf(zelda)) {
+    console.log('true');
+} else {
+     console.log('false');
 }
+
+
+if (protp === Hero.prototype) {
+    console.log('true');
+} else {
+     console.log('false');
+}
+
+
+Hero.prototype.fight = () => {
+    console.log("FIGHT");
+}
+zelda.fight();
