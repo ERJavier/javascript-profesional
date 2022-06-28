@@ -1,8 +1,8 @@
-const AutoPlay = () => {}
+function AutoPlay() {}
 
 AutoPlay.prototype.run = (player) => {
     if (!player.muted){
-        player.muted(true);
+        player.muted =true;
     }
     player.play();
 };
