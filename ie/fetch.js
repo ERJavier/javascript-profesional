@@ -19,12 +19,22 @@ function stopLoading() {
 loadButton.onclick = async function (){
     startLoading();
 
-    controller = new AbortController()
+    try {
+        controller = new AbortController()
 
-    const response = await fetch(url, {signal: controller.signal});
-    const blob = await response.blob();
-    const imgUrl = URL.createObjectURL(blob);
-    img.src = imgUrl;
+        const response = await fetch(url, {signal: controller.signal});
+        const blob = await response.blob();
+        const imgUrl = URL.createObjectURL(blob);
+        img.src = imgUrl;
+    } catch (error) {
+        console.log(error.message);
+    }
 
     stopLoading();
 }
+
+
+stopButton.onclick = function() {
+controller.abort();
+stopLoading();
+};
