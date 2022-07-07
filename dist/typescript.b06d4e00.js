@@ -126,6 +126,23 @@ function add(a, b) {
 
 var sum = add(2, 3);
 console.log(sum);
+var people = [];
+people = ["yani", "redd", "julian"]; // people.push("88")
+
+var peopleAndNumbers = [];
+peopleAndNumbers.push("manuel");
+peopleAndNumbers.push(0); // Enum
+
+var Color;
+
+(function (Color) {
+  Color["rojo"] = "rojo";
+  Color["azul"] = "azul";
+  Color["amarillo"] = "amarillo";
+})(Color || (Color = {}));
+
+var colorFavorito = Color.amarillo;
+console.log(" mi color es  ".concat(colorFavorito));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
