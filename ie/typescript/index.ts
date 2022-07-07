@@ -26,3 +26,12 @@ enum Color {
 
 let colorFavorito: Color = Color.amarillo;
 console.log(` mi color es  ${colorFavorito}`);
+
+//ANY
+
+let comodin: any = "joker"
+comodin = {type: 'wildcard'};
+
+//object
+
+let someObject: object =  {type: 'wildcard'};
