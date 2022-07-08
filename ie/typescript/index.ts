@@ -80,7 +80,7 @@ function area(r: Rectangulo){
     return r.alto * r.ancho
 }
 
-const areaRect = area
+const areaRect = area;
 console.log(areaRect)
 
 console.log(rect.toString());
@@ -91,3 +91,4 @@ rect.toString = function(){
 } 
 
 console.log(rect.toString());
+
