@@ -178,6 +178,25 @@ function fullName(firstName, lastName) {
 
 var richard = fullName('agente');
 console.log(richard);
+var rect = {
+  ancho: 6,
+  alto: 6,
+  color: red
+};
+
+function area(r) {
+  return r.alto * r.ancho;
+}
+
+var areaRect = area;
+console.log(areaRect);
+console.log(rect.toString());
+
+rect.toString = function () {
+  return this.color ? "un rectangulo ".concat(this.color) : "Un Rectangulo";
+};
+
+console.log(rect.toString());
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
