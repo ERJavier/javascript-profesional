@@ -118,33 +118,33 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"sw.js":[function(require,module,exports) {
-const VERSION = "v1";
+const VERSION = 'v1';
 self.addEventListener('install', event => {
   event.waitUntil(precache());
 });
 self.addEventListener('fetch', event => {
-  const request = event.request; //get
+  const request = event.request; // get
 
-  if (request.method !== "GET") {
+  if (request.method !== 'GET') {
     return;
-  } // buscar cache
+  } // buscar en cache
 
 
-  event.respondWith(cachedResponse(request)); //actualizar cache
+  event.respondWith(cachedResponse(request)); // actualizar el cache
 
   event.waitUntil(updateCache(request));
 });
 
 async function precache() {
-  const cache = await cache.open(VERSION);
+  const cache = await caches.open(VERSION);
   return cache.addAll([// '/',
     // '/index.html',
     // '/assets/index.js',
     // '/assets/MediaPlayer.js',
-    // '/assets/plugins/AutoPause.js',
     // '/assets/plugins/AutoPlay.js',
+    // '/assets/plugins/AutoPause.ts',
     // '/assets/index.css',
-    // '/assets/BigBuckBunny.mp4'
+    // '/assets/BigBuckBunny.mp4',
   ]);
 }
 
@@ -187,7 +187,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49557" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52824" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
